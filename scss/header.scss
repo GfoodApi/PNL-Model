@@ -1,0 +1,45 @@
+/*  Header Style file */
+/* 
+@include box(20px,20px);
+@include font(500, $white, $base-font-size, $base-line-height);
+ @media screen and (min-width:600px) {
+                    background-size: cover;
+                }
+*/
+header {
+    background-color: var(--top-background);
+        height: 54px;
+        //@include center_center;
+        display: flex;
+        justify-content: space-between;
+
+        >div {
+            display: flex;
+        }
+
+        img {
+            height: 24px;
+        }
+
+        .sidepanel_icon {
+
+            width: 15%;
+            align-items: center;
+            margin-left: 15px;
+
+        }
+
+        .title {
+            @include center_center;
+            text-align: center;
+//@include font(600, $white, $base-font-size, $base-line-height);
+        }
+
+        .icon {
+            width: 15%;
+            align-items: center;
+            justify-content: flex-end;
+            margin-right: 15px;
+        }
+    }
+

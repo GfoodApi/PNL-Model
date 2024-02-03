@@ -1,0 +1,27 @@
+/* Popup Style */
+.modal{
+	top: 35%;
+	border-radius: 12px;
+	z-index: 10;
+	.modal-content{
+		padding: 12px;
+		font-size: 14px;
+	}
+	.modal-footer{
+		padding: 0 12px 12px;
+		height: auto;
+		label{
+			float: left !important;
+			span{
+				padding-left: 30px;
+			}
+		}
+		button{
+			background-color: var(--main-color);
+			height: 30px;
+			line-height: 30px;
+			border-radius: 6px;
+			margin:0 !important;
+		}
+	}
+}

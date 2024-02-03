@@ -1,0 +1,18 @@
+/* sidepanel */
+/* 
+ @media  screen and (max-width: 350px) {
+ @include font(500, $white, $base-font-size, $base-line-height);
+*/
+.sidenav{
+    width:40%;
+    /* Open the comment for constant opening of sidepanel */
+    /* transform: translateX(0%); */
+    background: var(--gold); //maroon
+    color:var(--white);
+    .back_icon{
+        padding:10px;
+        a{
+            img{}
+        }
+    }
+} //.sidepanel

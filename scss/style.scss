@@ -1,0 +1,11 @@
+//main SCSS file
+//sass --watch scss/style.scss:css/style.css
+@import 'variables';
+@import 'mixins';
+@import 'fonts';
+@import 'base';
+@import 'header';
+@import 'kpis';
+@import 'objects';
+@import 'sidepanel';
+@import 'popup';

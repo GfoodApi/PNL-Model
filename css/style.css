@@ -1,0 +1,582 @@
+/* Veriables  */
+:root {
+  /* colors */
+  --font-stack: "Assistant", sans-serif;
+  --main-color: #000000;
+  --main-background: #FFFFFF;
+  --top-bakcground: #272829;
+  /* Gold Palette https://colorhunt.co/palette/6b240c994d1ce48f45f5cca0
+  --maroon-p: #6B240C;
+  --brown-p: #994D1C;
+  --orange-p: #E48F45;
+  --orange-light-p: #F5CCA0; */
+  --black: #000000;
+  --light-black: #272829;
+  --grey: #61677A;
+  --grey-light: #D8D9DA;
+  --white: #FFFFFF;
+  --bright-text: #E0E0E0;
+  --red: #DB0000;
+  --green: #089000;
+  --main-text: #000000;
+  --maroon: #837875;
+  --gold: #B08957;
+  --gold-light: #E1C485;
+  --gold-lighter: #ECD592;
+  --orange: #E48F45;
+  --orange-light: #F5CCA0;
+  --orange-lighter: #F8E3C5;
+  --yellow-p: #FFF6E0;
+  /* Font Size */
+  --small-font-size: 12px;
+  --base-font-size: 14px;
+  --sub-title-font-size: 16px;
+  --title-font-size: 18px;
+  /* Breakpoints */
+  --extra-small: 415px;
+  --small: 600px;
+  --medium: 992px;
+  --large: 1200px;
+}
+
+/*
+// These classes can be added to HTML Elements
+// to affect visibility on certain displays.
+
+  .hide-on-small-only
+  .hide-on-small-and-down
+  .hide-on-med-and-down
+  .hide-on-med-and-up
+  .hide-on-med-only
+  .hide-on-large-only
+  .show-on-large
+  .show-on-medium
+  .show-on-small
+  .show-on-medium-and-up
+  .show-on-medium-and-down
+
+//   //@media #--{$small-and-down} {
+//     // styles for small screens and down  <= 600px
+//   }
+//   //@media #--{$medium-and-up} {
+//     // styles for medium screens and larger  > 600px
+//   }
+//   //@media #--{$medium-and-down} {
+//     // styles for medium screens and down   600px < scr < 992px
+//   }
+//  // @media #--{$large-and-up} {
+//     // styles for large screens and up > 992px
+//   }
+//   @media #--{$extra-large-and-up} {
+//     // styles for extra large screens and up >1200px
+//   } 
+*/
+/* Mixins Main file */
+/* 
+//screens
+$extra-small: 415px; //// <= 600px .s - $small
+$small: 600px; // > 600px .m - $medium
+$medium: 992x;  // > 992px .l - $large
+$large: 1200px; // > 1200px .xl  - $extra-large
+*/
+/** fonts file **/
+/* font face mixin */
+/* 
+
+Assistant font
+--------------
+https://fonts.google.com/specimen/Assistant
+------------------- 
+  fonts/Assistant-ExtraLight.ttf - 200
+  fonts/Assistant-Light.ttf - 300
+  fonts/Assistant-Regular.ttf - 400
+  fonts/Assistant-Medium.ttf - 500
+  fonts/Assistant-SemiBold.ttf - 600
+  fonts/Assistant-Bold.ttf - 700
+  font/Assistant-ExtraBold.ttf
+
+*/
+/* Font Face example */
+/*  @font-face{
+    font-family:"Heebo";
+    src:url("fonts/heebo/Heebo-Regular.eot") format("eot"),url("fonts/heebo/Heebo-Regular.ttf") format("truetype");
+}
+ */
+@font-face {
+  font-family: "Assistant";
+  font-weight: 700;
+  src: url("../fonts/Assistant-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Assistant";
+  font-weight: 600;
+  src: url("../fonts/Assistant-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Assistant";
+  font-weight: 500;
+  src: url("../fonts/Assistant-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Assistant";
+  font-weight: 400;
+  src: url("../fonts/Assistant-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Assistant";
+  font-weight: 300;
+  src: url("../fonts/Assistant-Light.ttf") format("truetype");
+}
+/* fallback */
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url("../fonts/MaterialIcons-Regular.ttf") format("truetype");
+}
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Basic Style File */
+/* base styling */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-family: var(--font-stack) !important;
+  font-size: 12px;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* materialize css fixes */
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 993px) {
+  .container {
+    width: 85%;
+  }
+}
+.container_flex {
+  width: 100%;
+}
+
+.row {
+  margin-bottom: 0;
+}
+.row .col {
+  /* direction right */
+  float: right;
+  padding: 0 2px;
+}
+
+.col .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+main {
+  background: var(--main-background);
+}
+
+/* remove box-shadow from all buttons*/
+button {
+  box-shadow: none !important;
+}
+
+select {
+  display: inline-block;
+}
+
+/* remove materialize style of nav  */
+nav:not(.my_navbar) {
+  color: inherit !important;
+  background-color: var(--white) !important;
+  width: auto !important;
+  height: auto !important;
+  line-height: normal !important;
+}
+
+/*  remove radio button style  */
+input[type=radio]:not(:checked), input[type=radio]:checked {
+  position: static;
+  opacity: initial;
+  pointer-events: auto;
+}
+
+input[type=checkbox], input[type=radio] {
+  /*  -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+   padding: 0; */
+}
+
+/* Button  button-scroll-to-top  */
+.button-scroll-to-top {
+  color: var(--white);
+  height: 40px;
+  width: 40px;
+  border: none;
+  border-radius: 20px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+.button-scroll-to-top i {
+  line-height: 1.5;
+}
+
+/*  Header Style file */
+/* 
+@include box(20px,20px);
+@include font(500, $white, $base-font-size, $base-line-height);
+ @media screen and (min-width:600px) {
+                    background-size: cover;
+                }
+*/
+header {
+  background-color: var(--top-background);
+  height: 54px;
+  display: flex;
+  justify-content: space-between;
+}
+header > div {
+  display: flex;
+}
+header img {
+  height: 24px;
+}
+header .sidepanel_icon {
+  width: 15%;
+  align-items: center;
+  margin-left: 15px;
+}
+header .title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+header .icon {
+  width: 15%;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 15px;
+}
+
+/* kpis scss */
+/* 
+background: linear-gradient(270deg, $blue-kpi-title-light 0%,$blue-kpi-title-dark 100%);
+@media screen and (max-width:350px) {
+                    font-size: 14px;
+                }
+@include font(500, $light-grey2, $small-font-size, 1);
+*/
+/*  Styling for Qlik Objects */
+.qvobject {
+  flex: 1 1 auto;
+  width: 100%;
+  position: relative;
+  font-family: var(--font-stack);
+  /* Filter */
+  /* Datepicker */
+  /* filters */
+  /* Table design */
+}
+.qvobject.top_filter {
+  height: 25px;
+}
+.qvobject.datetime {
+  height: 20px;
+  min-width: 165px;
+  padding-top: 2px;
+}
+.qvobject.datetime .qv-object-qlik-date-picker .qv-object-header {
+  display: none;
+}
+.qvobject.datetime .qv-object-qlik-date-picker .qv-object-content .bootstrap_inside span {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--main-text);
+}
+.qvobject.datetime .qv-object-qlik-date-picker .qv-object-content .lui-icon--calendar {
+  display: none;
+}
+.qvobject.datetime .qv-object-qlik-date-picker .qv-object-content .lui-button__caret {
+  color: var(--main-text);
+  position: relative;
+  top: 2px;
+  right: 4px;
+}
+.qvobject.datetime .qv-object-qlik-date-picker .show-range {
+  background: transparent !important;
+}
+.qvobject#CurrentSelections {
+  height: 30px;
+  width: 100%;
+  margin-top: 20px;
+  position: fixed;
+  left: 0;
+  bottom: 9px;
+}
+.qvobject .qv-object-filterpane {
+  height: 27px;
+}
+.qvobject .qv-object-filterpane .qv-collapsed-listbox {
+  background: var(--white);
+  border-radius: 10px;
+  border: none;
+  height: 23px;
+  /* for SaaS version */
+  /* .qv-state-count-bar{
+  	display: none;
+  } */
+}
+.qvobject .qv-object-filterpane .qv-collapsed-listbox .title-wrapper {
+  background: var(--white);
+}
+.qvobject .qv-object-filterpane .qv-collapsed-listbox .title-wrapper .title {
+  font-family: var(--font-stack);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--main-text);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 85%;
+  height: 15px;
+}
+.qvobject .qv-object-filterpane .qv-collapsed-listbox .title-wrapper .title:after {
+  font-family: "Material Icons";
+  content: "expand_more";
+  -webkit-font-feature-settings: "liga";
+  color: var(--main-color);
+  font-size: 18px;
+  line-height: 1.2;
+  width: 15px;
+  position: absolute;
+  top: 2px;
+  right: 7px;
+}
+.qvobject .qv-object-filterpane .qv-collapsed-listbox[aria-describedby*=lui-popover] .title-wrapper .title:after {
+  content: "expand_less";
+}
+.qvobject .qv-object-filterpane .qv-collapsed-listbox .qv-state-count-bar {
+  border: none !important;
+}
+.qvobject .qv-object-filterpane .qv-collapsed-listbox .qv-state-count-bar,
+.qvobject .qv-object-filterpane .qv-collapsed-listbox .qv-state-count-bar .state.optional,
+.qvobject .qv-object-filterpane .qv-collapsed-listbox .qv-state-count-bar .state.alternative {
+  background: var(--white);
+}
+.qvobject .qv-object-filterpane .qv-collapsed-listbox .qv-state-count-bar .state.selected {
+  background: var(--main-color);
+}
+.qvobject .qv-object-table {
+  background-color: #F5F5F5;
+}
+.qvobject .qv-object-table .qv-st .qv-st-value .qv-st-value-overflow {
+  text-align: right !important;
+}
+.qvobject .qv-object-table .qv-st .qv-st-value .qv-st-value-overflow span {
+  color: var(--light-black) !important;
+  font-family: var(--font-stack) !important;
+}
+.qvobject .qv-object-table table {
+  border: none !important;
+  background-color: #F5F5F5;
+}
+.qvobject .qv-object-table table .qv-st-sorting-indicator:before {
+  display: none;
+}
+.qvobject .qv-object-table table thead tr,
+.qvobject .qv-object-table table tbody tr {
+  border-bottom: 1px solid var(--grey) !important;
+}
+.qvobject .qv-object-table table thead tr th,
+.qvobject .qv-object-table table thead tr td,
+.qvobject .qv-object-table table tbody tr th,
+.qvobject .qv-object-table table tbody tr td {
+  border-top: 1px solid #F5F5F5 !important;
+  border-left: 1px solid #F5F5F5 !important;
+  border-right: 1px solid #F5F5F5 !important;
+  border-bottom: 1px solid var(--grey) !important;
+  padding: 5px 0;
+}
+.qvobject .qv-object-table table thead tr th {
+  line-height: 1;
+  vertical-align: middle;
+}
+.qvobject .qv-object-table table thead tr th .qv-st-value .qv-st-value-overflow {
+  font-weight: 700 !important;
+  font-size: 12px !important;
+}
+.qvobject .qv-object-table table thead tr th .lui-icon--search {
+  color: var(--light-black) !important;
+}
+.qvobject .qv-object-table table tbody tr td .qv-st-value .qv-st-value-overflow {
+  font-size: 1rem !important;
+}
+.qvobject .qv-object-wrapper {
+  /* right:30px; */
+}
+/* Tabs bug fix on "swipeable" option*/
+.tabs-content .qv-selection-toolbar {
+  top: 0 !important;
+}
+
+/* Filter Popup Colors */
+.qv-listbox .serverLocked,
+.qv-listbox .serverSelected,
+.qv-listbox li.selected {
+  background-color: var(--main-color);
+  border-bottom: 1px solid var(--main-color);
+}
+
+.sel-toolbar-list .sel-toolbar-confirm:disabled,
+.sel-toolbar-list .sel-toolbar-confirm:disabled:hover {
+  background-color: var(--main-color);
+}
+
+.sel-toolbar-confirm {
+  background-color: var(--main-color);
+}
+
+/* Datepicker popup */
+.qlik-daterangepicker td.stateL,
+.qlik-daterangepicker td.stateS {
+  background-color: var(--main-color) !important;
+}
+
+.qlik-daterangepicker.in-selection td.in-range {
+  background-color: var(--bright-text) !important;
+}
+
+.qlik-daterangepicker.in-selection td.available:hover,
+.qlik-daterangepicker.in-selection td.end-date,
+.qlik-daterangepicker.in-selection td.start-date {
+  background-color: var(--main-color) !important;
+}
+
+/* Saas fixes */
+/* Row of filter selection popover */
+.listbox-popover .RowColumn-barContainer .RowColumn-fieldRoot.RowColumn-S {
+  background-color: var(--main-color);
+}
+
+/* filters */
+.qv-object-filterpane {
+  height: 27px;
+  /* input value */
+}
+.qv-object-filterpane .folded-listbox > div {
+  background: var(--white);
+  border-radius: 10px;
+  border: none;
+  /* title */
+  /* selection bar */
+}
+.qv-object-filterpane .folded-listbox > div h6 {
+  font-family: var(--font-stack);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--main-text);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 85%;
+  height: 15px;
+}
+.qv-object-filterpane .folded-listbox > div h6:after {
+  font-family: "Material Icons";
+  content: "expand_more";
+  -webkit-font-feature-settings: "liga";
+  color: var(--main-color);
+  font-size: 18px;
+  line-height: 1.2;
+  width: 15px;
+  position: absolute;
+  top: 2px;
+  right: 7px;
+}
+.qv-object-filterpane .folded-listbox > div > div.MuiGrid-item > .MuiGrid-container {
+  border-top: none;
+}
+.qv-object-filterpane .folded-listbox > div > div.MuiGrid-item > .MuiGrid-container > .MuiGrid-item:nth-child(1) {
+  background: var(--main-color) !important;
+}
+
+/* icon after the opening */
+body:has(.listbox-popover) .folded-listbox > div h6:after {
+  content: "expand_less";
+}
+
+/* sidepanel */
+/* 
+ @media  screen and (max-width: 350px) {
+ @include font(500, $white, $base-font-size, $base-line-height);
+*/
+.sidenav {
+  width: 40%;
+  /* Open the comment for constant opening of sidepanel */
+  /* transform: translateX(0%); */
+  background: var(--gold);
+  color: var(--white);
+}
+.sidenav .back_icon {
+  padding: 10px;
+}
+/* Popup Style */
+.modal {
+  top: 35%;
+  border-radius: 12px;
+  z-index: 10;
+}
+.modal .modal-content {
+  padding: 12px;
+  font-size: 14px;
+}
+.modal .modal-footer {
+  padding: 0 12px 12px;
+  height: auto;
+}
+.modal .modal-footer label {
+  float: left !important;
+}
+.modal .modal-footer label span {
+  padding-left: 30px;
+}
+.modal .modal-footer button {
+  background-color: var(--main-color);
+  height: 30px;
+  line-height: 30px;
+  border-radius: 6px;
+  margin: 0 !important;
+}
+
+/*# sourceMappingURL=style.css.map */

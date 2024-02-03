@@ -1,0 +1,80 @@
+/* Veriables  */
+//import fonts 
+:root {
+  /* colors */
+  --font-stack: 'Assistant', sans-serif;
+  --main-color: #000000;
+  --main-background: #FFFFFF;
+  --top-bakcground: #272829;
+
+  /* Gold Palette https://colorhunt.co/palette/6b240c994d1ce48f45f5cca0
+  --maroon-p: #6B240C;
+  --brown-p: #994D1C;
+  --orange-p: #E48F45;
+  --orange-light-p: #F5CCA0; */
+
+  --black: #000000;
+  --light-black: #272829;
+  --grey: #61677A;
+  --grey-light: #D8D9DA;
+  --white: #FFFFFF;
+  --bright-text: #E0E0E0;
+  --red: #DB0000;
+  --green: #089000;
+  --main-text: #000000;
+  --maroon: #837875;
+  --gold: #B08957;
+  --gold-light: #E1C485;
+  --gold-lighter: #ECD592;
+  --orange: #E48F45;
+  --orange-light: #F5CCA0;
+  --orange-lighter: #F8E3C5;
+  --yellow-p: #FFF6E0;
+
+  /* Font Size */
+  --small-font-size: 12px;
+  --base-font-size: 14px;
+  --sub-title-font-size: 16px;
+  --title-font-size: 18px;
+
+  /* Breakpoints */
+  --extra-small: 415px; //// <= 600px .s - $small
+  --small: 600px; // > 600px .m - $medium
+  --medium: 992px; // > 992px .l - $large
+  --large: 1200px; // > 1200px .xl  - $extra-large
+
+}
+
+//https://materializeweb.com/sass.html
+/*
+// These classes can be added to HTML Elements
+// to affect visibility on certain displays.
+   
+  .hide-on-small-only
+  .hide-on-small-and-down
+  .hide-on-med-and-down
+  .hide-on-med-and-up
+  .hide-on-med-only
+  .hide-on-large-only
+  .show-on-large
+  .show-on-medium
+  .show-on-small
+  .show-on-medium-and-up
+  .show-on-medium-and-down
+
+//   //@media #--{$small-and-down} {
+//     // styles for small screens and down  <= 600px
+//   }
+//   //@media #--{$medium-and-up} {
+//     // styles for medium screens and larger  > 600px
+//   }
+//   //@media #--{$medium-and-down} {
+//     // styles for medium screens and down   600px < scr < 992px
+//   }
+//  // @media #--{$large-and-up} {
+//     // styles for large screens and up > 992px
+//   }
+//   @media #--{$extra-large-and-up} {
+//     // styles for extra large screens and up >1200px
+//   } 
+*/
