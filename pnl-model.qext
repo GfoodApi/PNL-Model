@@ -1,0 +1,11 @@
+{
+	"type": "mashup",
+	"name": "pnl-model",
+	"allowPosition": true,
+	"version": "1.0.0",
+    "author": "",
+	"preview": "img/logo-icon.png",
+    "keywords": "qlik-sense, visualization, mashup",
+    "license": "",
+    "repository": ""
+}

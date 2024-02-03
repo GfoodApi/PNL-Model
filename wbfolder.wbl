@@ -1,0 +1,15 @@
+pnl-model.qext;
+index.html;
+views/home.html;
+css/style.css;
+js/lib/main.js;
+js/settings.js;
+js/controllers/home.js;
+views/templates/header.html;
+views/templates/top_kpi.html;
+views/templates/table_contracts.html;
+views/templates/table_invoices.html;
+js/services/api.js;
+js/services/app.js;
+js/services/utilities.js;
+
