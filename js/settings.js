@@ -9,7 +9,7 @@ const settings = {
   },
   app_id: "d8eee684-ff7d-4f9f-80b2-fe5e2009a933",
   scriptsUrlLocal: "http://localhost/pnl-model/",
-  scriptsUrl: "https://gfoodapi.github.io/pnl-model/"",
+  scriptsUrl: "https://gfoodapi.github.io/pnl-model/",
   objects: {
     pivot:"500f6369-ee50-41eb-9d89-9082fcdbd2d7",
     filters: [
