@@ -1,0 +1,62 @@
+/* Main Charts SCSS */
+.chart{
+	h2{
+		//cancel the materialize style
+		margin: 1rem 0 0;
+	}
+}
+#pivot{
+    height:75dvh;
+	.qv-object{
+		border-radius: 0.5rem;
+		div[data-testid="full-size-container"]{
+			margin: 0 auto !important;
+		}
+	}
+}
+#barchart{
+    height:60dvh;
+	.qv-object{
+		border-radius: 0.5rem;
+	}
+}
+/* active buttons */
+.active_buttons{
+	.button{
+		padding:0;
+		.qvobject{
+			height:40px;
+			.qv-object-action-button{
+				button{
+					border-radius: 0.8rem !important;
+					background: var(--gold) !important;
+					text{
+						direction: rtl;
+						font-size: 1.3rem !important;
+						span{
+							font-family: var(--font-stack) !important;
+						}
+					}
+					&:hover,&:active, &:focus {
+						background: var(--gold-light) !important;
+						color: var(--main-color) !important;
+					}
+				}
+				&.qv-object-c0509e5c-bcc1-4872-b89a-1bf2ccf75803{
+					button text{
+						span{
+							font-size: 0.9rem !important;
+							max-width: 100px;
+							text-overflow: ellipsis;
+							text-align: center;
+							overflow: hidden;
+						}
+						
+					}
+				}
+			}
+		}
+	}
+	// background: var(--gold-lighter);
+	// color: var(--main-color);
+}

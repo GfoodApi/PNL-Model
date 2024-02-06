@@ -1,43 +1,107 @@
-<!-- controller.home -->
-<!-- Header -->
-				<!-- <div class="container_body" ng-include="'views/templates/table_invoices.html'" ng-if="object_type == 'invoices'"></div>
-				<div class="container_body" ng-include="'views/templates/table_contracts.html'" ng-if="object_type == 'contracts'"></div> -->
-				<!-- <div class="back_icon">
-        <a href="" class="close_sidenav" ng-click="closeSidepanel()">
-            <img src="img/arrow_left.svg" alt="back_icon">
-        </a>
-    </div> -->
-<header ng-include="'views/templates/header.html'"></header>
-<!-- sidepanel -->
-<div class="sidepanel sidenav" id="sidenav">
-    <div class="back_icon">
-        <a href="" class="close_sidenav" ng-click="closeSidepanel()">
-            <img src="img/arrow_left.svg" alt="back_icon">
-        </a>
-    </div>
-<!--     <div class="sidepanel_buttons">
-        <div class="buttons">
-            <button class="sidepanel_button" ng-click="changeVtarget(1,$event)">
-                Dealer
-            </button>
-            <button class="sidepanel_button active" ng-click="changeVtarget(2,$event)">
-                Budget
-            </button>
-            <button class="sidepanel_button" ng-click="changeVtarget(3,$event)">
-                Forecast
-            </button>
-        </div>
-    </div> -->
+<!-- controller.dashboard -->
 </div>
-<!-- main -->
+
 <main>
-	<div class="container_flex"></div>
-		<!-- Top kpi -->
-		<div class="top_kpi_table" ng-include="'views/templates/kpis.html'"></div>
-		<!-- Main Container -->
-		<div class="main_container">
-			
-		</div>
-	</div>
+    
+	<div class="kpi_buttons row" dir="rtl">
+
+        <div class="kpi_button_card col s6 right_card">
+            <div class="kpi_button sales_button active" ng-click="changeChart(0,$event)">
+                <div class="kpi_button_title">סה"כ הכנסות</div>
+               <!--  <div class="kpi_button_data row">
+                    <div class="col s4">
+                        <div class="kpi_button_data_title">2024</div>
+                        <div class="kpi_button_data_value">16.54M</div>
+                    </div>
+                    <div class="col s4">
+                     <div class="kpi_button_data_title">2023</div>
+                     <div class="kpi_button_data_value">14.32M</div>
+                 </div>
+                 <div class="col s4">
+                     <div class="kpi_button_data_title">% שינוי</div>
+                     <div class="kpi_button_data_value"  ng-class="(kpis[2].qNum > 0 ? 'color_green' : 'color_red')">52.55%</div>
+                 </div>
+                 </div>  -->
+                <div class="kpi_button_data row">
+                   <div class="col s4">
+                       <div class="kpi_button_data_title">{{this_year}}</div>
+                       <div class="kpi_button_data_value">{{kpis[0].numKM}}</div>
+                   </div>
+                   <div class="col s4">
+                    <div class="kpi_button_data_title">{{last_year}}</div>
+                    <div class="kpi_button_data_value">{{kpis[1].numKM}}</div>
+                </div>
+                <div class="col s4">
+                    <div class="kpi_button_data_title">% שינוי</div>
+                    <div class="kpi_button_data_value" ng-class="(kpis[2].qNum > 0 ? 'color_green' : 'color_red')">{{kpis[5].qText}}</div>
+                </div>
+                </div>
+              </div>
+        </div>
+
+        <div class="kpi_button_card col s6 left_card">
+            <div class="kpi_button sales_button" ng-click="changeChart(1,$event)">
+                <div class="kpi_button_title">סה"כ הוצאות</div>
+                <div class="kpi_button_data row">
+                    <div class="col s4">
+                        <div class="kpi_button_data_title">{{this_year}}</div>
+                        <div class="kpi_button_data_value">{{kpis[2].numKM}}</div>
+                    </div>
+                    <div class="col s4">
+                     <div class="kpi_button_data_title">{{last_year}}</div>
+                     <div class="kpi_button_data_value">{{kpis[3].numKM}}</div>
+                 </div>
+                 <div class="col s4">
+                     <div class="kpi_button_data_title">% שינוי</div>
+                     <div class="kpi_button_data_value" ng-class="(kpis[5].qNum > 0 ? 'color_green' : 'color_red')">{{kpis[5].qText}}</div>
+                 </div>
+                </div>
+              </div>
+        </div>
+
+        <div class="kpi_button_card col s6 right_card">
+            <div class="kpi_button sales_button" ng-click="changeChart(2,$event)">
+                <div class="kpi_button_title">סה"כ רווח</div>
+                <div class="kpi_button_data row">
+                    <div class="col s4">
+                        <div class="kpi_button_data_title">{{this_year}}</div>
+                        <div class="kpi_button_data_value">{{kpis[4].numKM}}</div>
+                    </div>
+                    <div class="col s4">
+                     <div class="kpi_button_data_title">{{last_year}}</div>
+                     <div class="kpi_button_data_value">{{kpis[7].numKM}}</div>
+                 </div>
+                 <div class="col s4">
+                     <div class="kpi_button_data_title">% שינוי</div>
+                     <div class="kpi_button_data_value" ng-class="(kpis[5].qNum > 0 ? 'color_green' : 'color_red')">{{kpis[5].qText}}</div>
+                 </div>
+                </div>
+              </div>
+        </div>
+
+        <div class="kpi_button_card col s6 left_card">
+            <div class="kpi_button sales_button" ng-click="changeChart(3,$event)">
+                <div class="kpi_button_title">% רווח</div>
+                <div class="kpi_button_data row">
+                    <div class="col s4">
+                        <div class="kpi_button_data_title">{{this_year}}</div>
+                        <div class="kpi_button_data_value">{{kpis[5].numKM}}</div>
+                    </div>
+                    <div class="col s4">
+                     <div class="kpi_button_data_title">{{last_year}}</div>
+                     <div class="kpi_button_data_value">{{kpis[6].numKM}}</div>
+                 </div>
+                 <div class="col s4">
+                     <div class="kpi_button_data_title">% שינוי</div>
+                     <div class="kpi_button_data_value" ng-class="(kpis[5].qNum > 0 ? 'color_green' : 'color_red')">{{kpis[5].qText}}</div>
+                 </div>
+                </div>
+              </div>
+        </div>
+    </div><!-- ./kpi_buttons -->
+
+    <div class="chart">
+        <div class="qvobject" id="barchart"></div>
+    </div>
+
 </main>
-<!-- ng-if="object_type == 'invoices'" -->

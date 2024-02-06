@@ -1,6 +1,5 @@
 //Application settings and boot
 console.log('config', config);
-console.log('app_id', app_settings.app_id);
 
 var me = {
 	v: '1.0.7',
@@ -24,8 +23,7 @@ me.boot = function () {
 
 	//console.log('me.config',me.config);
 
-	me.obj.app = me.obj.qlik.openApp(app_settings.app_id, me.config); //open app
-	//console.log('%c App ' + me.v + ': ', 'color: red', 'Loaded!');
+	me.obj.app = me.obj.qlik.openApp(settings.app_id, me.config); //open app
 };
 
 app = me;

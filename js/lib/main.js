@@ -1,7 +1,7 @@
 //Main file
 
 /* Login function  */
-/*
+
 async function login() {
 
 	async function isLoggedIn() {
@@ -32,19 +32,13 @@ async function login() {
 
 	}
 
-}
+} 
 //get data from browser 
 //login().then(() => {
-//login();  */
+login(); 
 
-console.log('Basic Settings-----', baseUrl, config.webIntegrationId, scriptsUrl);
-console.log('require', require);
+console.log('Basic Settings', baseUrl, config.webIntegrationId, scriptsUrl);
 
-// Load mashup js code
-//function load_mashup() {
-
-	console.log('hello mashup');
-	console.log('require', require);
 	/* 
 	 * DEPENDANCIES
 	 */
@@ -54,13 +48,11 @@ console.log('require', require);
 		paths: {
 			'domReady': scriptsUrl + 'js/vendor/domReady/domReady',
 			'jquery': scriptsUrl + 'js/vendor/jquery/dist/jquery.min',
-			'materialize': scriptsUrl + 'js/vendor/materialize.min',
+			//'materialize': scriptsUrl + 'js/vendor/materialize_old/materialize.min',
 			'app': scriptsUrl + 'js/lib/app',
 			'controller.home': scriptsUrl + 'js/controllers/home',
+			'controller.dashboard': scriptsUrl + 'js/controllers/dashboard',
 			'directive.getObject': scriptsUrl + 'js/directives/getObject',
-			'directive.dropDown': scriptsUrl + 'js/directives/dropDown',
-			'directive.exportToCsv': scriptsUrl + 'js/directives/exportToCsv',
-			'directive.visualization': scriptsUrl + 'js/directives/visualization',
 			'service.api': scriptsUrl + 'js/services/api',
 			'service.utility': scriptsUrl + 'js/services/utilities'
 		}
@@ -87,6 +79,10 @@ console.log('require', require);
 					templateUrl: scriptsUrl + "views/home.html",
 					controller: 'controller.home'
 				})
+				.when('/dashboard', { //..../pnl-model/#!/dash
+					templateUrl: scriptsUrl + "views/dashboard.html",
+					controller: 'controller.dashboard'
+				})
 				.otherwise({
 					redirectTo: '/'
 				})
@@ -96,14 +92,14 @@ console.log('require', require);
 			'domReady!',
 			'js/qlik',
 			'angular',
-			'materialize',
+			//'materialize',
 			'controller.home',
+
+
+			'controller.dashboard',
 			'service.api',
 			'service.utility',
-			'directive.getObject',
-			'directive.dropDown',
-			'directive.exportToCsv',
-			'directive.visualization'
+			'directive.getObject'
 		], function (document, qlik) {
 
 			app.obj.qlik = qlik;
@@ -122,4 +118,4 @@ console.log('require', require);
 
 	});
 
-//}
+//});

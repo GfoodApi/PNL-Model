@@ -44,6 +44,7 @@ html, body {
 }
 main{
 	background: var(--main-background);
+	padding: 0 0.8rem;
 }
 /* remove box-shadow from all buttons*/
 button{
@@ -53,6 +54,43 @@ select{
 	display:inline-block;
 }
 
+/* preloader */
+.preloader-wrapper{
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		z-index: 9999;
+		&.big{
+			width: 8rem;
+			height: 8rem;
+			margin: -4rem 0 0 -4rem;
+		}
+}
+.spinner-gold{
+	border-color: var(--gold) !important;
+}
+
+/* sidenav-button */
+.sidenav-button{
+	border:none;
+	background: transparent;
+	&:focus{
+		background: var(--gold-lighter) !important;
+	}
+	i{
+		font-size: 3rem;
+		color:var(--white)
+	}
+}
+
+/* Datepicker */
+.qlik-daterangepicker.show-calendar.dropdown-menu{
+	z-index: 2000 !important;
+}
+/* Disable materialize datepicker */
+.datepicker-modal{
+	display: none !important;
+}
 /* remove materialize style of nav  */
 nav:not(.my_navbar) {
 	color:inherit !important;
@@ -90,4 +128,11 @@ input[type="checkbox"], input[type="radio"] {
 	i{
 		line-height: 1.5;
 	}
+}
+
+.color_red{
+	color:var(--red) !important;
+}
+.color_green{
+	color:var(--green) !important;
 }

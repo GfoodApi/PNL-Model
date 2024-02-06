@@ -4,15 +4,28 @@
  @include font(500, $white, $base-font-size, $base-line-height);
 */
 .sidenav{
-    width:40%;
+    width:45%;
     /* Open the comment for constant opening of sidepanel */
-    /* transform: translateX(0%); */
-    background: var(--gold); //maroon
-    color:var(--white);
+    // transform: translateX(0%);
+    background: var(--light-black);
+    color:var(--main-color);
     .back_icon{
-        padding:10px;
         a{
             img{}
+        }
+    }
+    .sidepanel_container{
+        margin:1rem;
+    }
+    .filters_container{
+        .filter{
+            margin: 1rem 0;
+            .qvobject{
+                height:3rem;
+                &#datepicker{
+                    height:2rem;
+                }
+            }
         }
     }
 } //.sidepanel

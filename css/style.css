@@ -22,6 +22,7 @@
   --maroon: #837875;
   --gold: #B08957;
   --gold-light: #E1C485;
+  --gold-light-dark: #d3b473;
   --gold-lighter: #ECD592;
   --orange: #E48F45;
   --orange-light: #F5CCA0;
@@ -200,6 +201,7 @@ html, body {
 
 main {
   background: var(--main-background);
+  padding: 0 0.8rem;
 }
 
 /* remove box-shadow from all buttons*/
@@ -209,6 +211,46 @@ button {
 
 select {
   display: inline-block;
+}
+
+/* preloader */
+.preloader-wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+}
+.preloader-wrapper.big {
+  width: 8rem;
+  height: 8rem;
+  margin: -4rem 0 0 -4rem;
+}
+
+.spinner-gold {
+  border-color: var(--gold) !important;
+}
+
+/* sidenav-button */
+.sidenav-button {
+  border: none;
+  background: transparent;
+}
+.sidenav-button:focus {
+  background: var(--gold-lighter) !important;
+}
+.sidenav-button i {
+  font-size: 3rem;
+  color: var(--white);
+}
+
+/* Datepicker */
+.qlik-daterangepicker.show-calendar.dropdown-menu {
+  z-index: 2000 !important;
+}
+
+/* Disable materialize datepicker */
+.datepicker-modal {
+  display: none !important;
 }
 
 /* remove materialize style of nav  */
@@ -248,6 +290,14 @@ input[type=checkbox], input[type=radio] {
   line-height: 1.5;
 }
 
+.color_red {
+  color: var(--red) !important;
+}
+
+.color_green {
+  color: var(--green) !important;
+}
+
 /*  Header Style file */
 /* 
 @include box(20px,20px);
@@ -256,34 +306,48 @@ input[type=checkbox], input[type=radio] {
                     background-size: cover;
                 }
 */
-header {
-  background-color: var(--top-background);
-  height: 54px;
-  display: flex;
-  justify-content: space-between;
+header.header {
+  background-image: url(../img/header.jpg);
+  background-size: cover;
+  height: 6rem;
+  display: block;
+  width: 100%;
 }
-header > div {
-  display: flex;
+header.header .header_container {
+  height: 100%;
+  padding: 0 1rem;
 }
-header img {
-  height: 24px;
+header.header .header_container .sidepanel_icon {
+  justify-content: start;
 }
-header .sidepanel_icon {
-  width: 15%;
-  align-items: center;
-  margin-left: 15px;
+header.header .header_container .sidepanel_icon button i {
+  color: var(--white);
 }
-header .title {
-  display: flex;
-  align-items: center;
+header.header .header_container .sidepanel_icon button:focus {
+  background-color: transparent;
+}
+header.header .header_container .menu_icons {
   justify-content: center;
-  text-align: center;
+  color: var(--white);
 }
-header .icon {
-  width: 15%;
-  align-items: center;
-  justify-content: flex-end;
-  margin-right: 15px;
+header.header .header_container .menu_icons .icons_container {
+  width: 80%;
+}
+header.header .header_container .menu_icons .icons_container a {
+  margin: 0 0.5rem;
+}
+header.header .header_container .menu_icons .icons_container a i {
+  font-size: 3rem;
+  color: var(--white);
+}
+header.header .header_container .menu_icons .icons_container a.active i {
+  color: var(--gold-lighter);
+}
+header.header .logo {
+  justify-content: end;
+}
+header.header .logo img {
+  height: 5.5rem;
 }
 
 /* kpis scss */
@@ -294,45 +358,151 @@ background: linear-gradient(270deg, $blue-kpi-title-light 0%,$blue-kpi-title-dar
                 }
 @include font(500, $light-grey2, $small-font-size, 1);
 */
+.kpi_buttons {
+  padding: 0.5rem 0;
+}
+.kpi_buttons .kpi_button_card {
+  grid-gap: 0.3rem 0.3rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+}
+.kpi_buttons .kpi_button_card .kpi_button {
+  border: none;
+  border-radius: 0.5rem;
+  text-align: center;
+  background: var(--gold-light);
+  padding: 0.5rem;
+}
+.kpi_buttons .kpi_button_card .kpi_button.active {
+  background: #cba87b;
+  /* background:  var(--gold);
+  .kpi_button_data_title{
+      color: var(--bright-text) !important;
+  }
+  .kpi_button_title{
+      color: var(--white) !important;
+  }
+  .kpi_button_data_value{
+      color: var(--white) !important;
+  }
+  .color_green{
+      color:rgb(182, 218, 182) !important;
+  }
+  .color_red{
+      color:rgb(214, 179, 179) !important;   
+  } */
+}
+.kpi_buttons .kpi_button_card .kpi_button .kpi_button_title {
+  font-weight: 700;
+  font-size: 1.3rem;
+  line-height: 1;
+  color: var(--main-color);
+  padding: 0.2rem 0;
+}
+.kpi_buttons .kpi_button_card .kpi_button .kpi_button_data .kpi_button_data_value {
+  direction: ltr;
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1;
+  color: var(--light-black);
+}
+.kpi_buttons .kpi_button_card .kpi_button .kpi_button_data .kpi_button_data_value.small_value {
+  font-size: 0.8rem;
+}
+.kpi_buttons .kpi_button_card .kpi_button .kpi_button_data .kpi_button_data_title {
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  color: var(--grey);
+}
+
+/* Main Charts SCSS */
+.chart h2 {
+  margin: 1rem 0 0;
+}
+
+#pivot {
+  height: 75dvh;
+}
+#pivot .qv-object {
+  border-radius: 0.5rem;
+}
+#pivot .qv-object div[data-testid=full-size-container] {
+  margin: 0 auto !important;
+}
+
+#barchart {
+  height: 60dvh;
+}
+#barchart .qv-object {
+  border-radius: 0.5rem;
+}
+
+/* active buttons */
+.active_buttons .button {
+  padding: 0;
+}
+.active_buttons .button .qvobject {
+  height: 40px;
+}
+.active_buttons .button .qvobject .qv-object-action-button button {
+  border-radius: 0.8rem !important;
+  background: var(--gold) !important;
+}
+.active_buttons .button .qvobject .qv-object-action-button button text {
+  direction: rtl;
+  font-size: 1.3rem !important;
+}
+.active_buttons .button .qvobject .qv-object-action-button button text span {
+  font-family: var(--font-stack) !important;
+}
+.active_buttons .button .qvobject .qv-object-action-button button:hover, .active_buttons .button .qvobject .qv-object-action-button button:active, .active_buttons .button .qvobject .qv-object-action-button button:focus {
+  background: var(--gold-light) !important;
+  color: var(--main-color) !important;
+}
+.active_buttons .button .qvobject .qv-object-action-button.qv-object-c0509e5c-bcc1-4872-b89a-1bf2ccf75803 button text span {
+  font-size: 0.9rem !important;
+  max-width: 100px;
+  text-overflow: ellipsis;
+  text-align: center;
+  overflow: hidden;
+}
+
 /*  Styling for Qlik Objects */
 .qvobject {
   flex: 1 1 auto;
   width: 100%;
   position: relative;
   font-family: var(--font-stack);
-  /* Filter */
   /* Datepicker */
+  /* .qv-object-qlik-date-picker {
+  	.qv-object-header {
+  		display: none;
+  	}
+  	.qv-object-content {
+  		.bootstrap_inside {
+  			span {
+  				@include font(600, var(--white), 1rem, 1.2);
+  			}
+  		}
+  		.lui-icon--calendar {
+  			//display: none;
+  		}
+  		.lui-button__caret {
+  			color: var(--white);
+  			position: relative;
+  			top: 2px;
+  			right: 4px;
+  		}
+  	}
+  	.show-range {
+  		background: transparent !important;
+  	}
+  } */
   /* filters */
-  /* Table design */
 }
-.qvobject.top_filter {
-  height: 25px;
-}
-.qvobject.datetime {
-  height: 20px;
-  min-width: 165px;
-  padding-top: 2px;
-}
-.qvobject.datetime .qv-object-qlik-date-picker .qv-object-header {
-  display: none;
-}
-.qvobject.datetime .qv-object-qlik-date-picker .qv-object-content .bootstrap_inside span {
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 18px;
-  color: var(--main-text);
-}
-.qvobject.datetime .qv-object-qlik-date-picker .qv-object-content .lui-icon--calendar {
-  display: none;
-}
-.qvobject.datetime .qv-object-qlik-date-picker .qv-object-content .lui-button__caret {
-  color: var(--main-text);
-  position: relative;
-  top: 2px;
-  right: 4px;
-}
-.qvobject.datetime .qv-object-qlik-date-picker .show-range {
-  background: transparent !important;
+.qvobject .qv-object-qlik-date-picker .lui-icon--calendar {
+  margin-right: 0.5rem;
 }
 .qvobject#CurrentSelections {
   height: 30px;
@@ -361,7 +531,7 @@ background: linear-gradient(270deg, $blue-kpi-title-light 0%,$blue-kpi-title-dar
 .qvobject .qv-object-filterpane .qv-collapsed-listbox .title-wrapper .title {
   font-family: var(--font-stack);
   font-weight: 500;
-  font-size: 12px;
+  font-size: 1rem;
   line-height: 1.7;
   color: var(--main-text);
   text-overflow: ellipsis;
@@ -396,54 +566,32 @@ background: linear-gradient(270deg, $blue-kpi-title-light 0%,$blue-kpi-title-dar
 .qvobject .qv-object-filterpane .qv-collapsed-listbox .qv-state-count-bar .state.selected {
   background: var(--main-color);
 }
-.qvobject .qv-object-table {
-  background-color: #F5F5F5;
+.qvobject .qv-object .qv-object-title {
+  color: var(--main-color) !important;
+  font-size: 1.5rem !important;
 }
-.qvobject .qv-object-table .qv-st .qv-st-value .qv-st-value-overflow {
-  text-align: right !important;
+.qvobject .qv-object-sn-pivot-table {
+  direction: rtl;
 }
-.qvobject .qv-object-table .qv-st .qv-st-value .qv-st-value-overflow span {
-  color: var(--light-black) !important;
-  font-family: var(--font-stack) !important;
+.qvobject .qv-object-sn-pivot-table svg[data-testid=collapse-icon], .qvobject .qv-object-sn-pivot-table svg[data-testid=expand-icon] {
+  height: 1.5rem !important;
 }
-.qvobject .qv-object-table table {
-  border: none !important;
-  background-color: #F5F5F5;
+.qvobject .qv-object-sn-pivot-table div[data-key=scrollable-container--leftGrid] {
+  border-right: 1px solid var(--main-color);
+  border-top: 1px solid var(--main-color);
+  border-bottom: 1px solid var(--main-color);
 }
-.qvobject .qv-object-table table .qv-st-sorting-indicator:before {
-  display: none;
+.qvobject .qv-object-sn-pivot-table div[data-key=scrollable-container--dataGrid] {
+  border-left: 1px solid var(--main-color);
+  border-top: 1px solid var(--main-color);
+  border-bottom: 1px solid var(--main-color);
 }
-.qvobject .qv-object-table table thead tr,
-.qvobject .qv-object-table table tbody tr {
-  border-bottom: 1px solid var(--grey) !important;
+.qvobject .qv-object-sn-pivot-table div[data-testid=title-cell], .qvobject .qv-object-sn-pivot-table div[data-cell-type=P] {
+  background: var(--orange-lighter) !important;
+  font-weight: 700;
+  border: 1px solid var(--main-color);
 }
-.qvobject .qv-object-table table thead tr th,
-.qvobject .qv-object-table table thead tr td,
-.qvobject .qv-object-table table tbody tr th,
-.qvobject .qv-object-table table tbody tr td {
-  border-top: 1px solid #F5F5F5 !important;
-  border-left: 1px solid #F5F5F5 !important;
-  border-right: 1px solid #F5F5F5 !important;
-  border-bottom: 1px solid var(--grey) !important;
-  padding: 5px 0;
-}
-.qvobject .qv-object-table table thead tr th {
-  line-height: 1;
-  vertical-align: middle;
-}
-.qvobject .qv-object-table table thead tr th .qv-st-value .qv-st-value-overflow {
-  font-weight: 700 !important;
-  font-size: 12px !important;
-}
-.qvobject .qv-object-table table thead tr th .lui-icon--search {
-  color: var(--light-black) !important;
-}
-.qvobject .qv-object-table table tbody tr td .qv-st-value .qv-st-value-overflow {
-  font-size: 1rem !important;
-}
-.qvobject .qv-object-wrapper {
-  /* right:30px; */
-}
+
 /* Tabs bug fix on "swipeable" option*/
 .tabs-content .qv-selection-toolbar {
   top: 0 !important;
@@ -467,19 +615,9 @@ background: linear-gradient(270deg, $blue-kpi-title-light 0%,$blue-kpi-title-dar
 }
 
 /* Datepicker popup */
-.qlik-daterangepicker td.stateL,
-.qlik-daterangepicker td.stateS {
-  background-color: var(--main-color) !important;
-}
-
-.qlik-daterangepicker.in-selection td.in-range {
-  background-color: var(--bright-text) !important;
-}
-
-.qlik-daterangepicker.in-selection td.available:hover,
-.qlik-daterangepicker.in-selection td.end-date,
-.qlik-daterangepicker.in-selection td.start-date {
-  background-color: var(--main-color) !important;
+.qv-object-qlik-date-picker .show-range {
+  background: transparent !important;
+  color: #FFFFFF;
 }
 
 /* Saas fixes */
@@ -490,12 +628,12 @@ background: linear-gradient(270deg, $blue-kpi-title-light 0%,$blue-kpi-title-dar
 
 /* filters */
 .qv-object-filterpane {
-  height: 27px;
+  height: 2.5rem;
   /* input value */
 }
 .qv-object-filterpane .folded-listbox > div {
   background: var(--white);
-  border-radius: 10px;
+  border-radius: 0.8rem;
   border: none;
   /* title */
   /* selection bar */
@@ -503,26 +641,26 @@ background: linear-gradient(270deg, $blue-kpi-title-light 0%,$blue-kpi-title-dar
 .qv-object-filterpane .folded-listbox > div h6 {
   font-family: var(--font-stack);
   font-weight: 500;
-  font-size: 12px;
+  font-size: 1rem;
   line-height: 1.7;
-  color: var(--main-text);
+  color: var(--main-color);
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
   max-width: 85%;
-  height: 15px;
+  height: 2rem;
 }
 .qv-object-filterpane .folded-listbox > div h6:after {
   font-family: "Material Icons";
   content: "expand_more";
   -webkit-font-feature-settings: "liga";
   color: var(--main-color);
-  font-size: 18px;
+  font-size: 1.5rem;
   line-height: 1.2;
-  width: 15px;
+  width: 1.3rem;
   position: absolute;
   top: 2px;
-  right: 7px;
+  left: 0.5rem;
 }
 .qv-object-filterpane .folded-listbox > div > div.MuiGrid-item > .MuiGrid-container {
   border-top: none;
@@ -532,25 +670,35 @@ background: linear-gradient(270deg, $blue-kpi-title-light 0%,$blue-kpi-title-dar
 }
 
 /* icon after the opening */
-body:has(.listbox-popover) .folded-listbox > div h6:after {
-  content: "expand_less";
-}
-
+/* body:has(.listbox-popover) {
+	.folded-listbox > div h6:after{
+		content: "expand_less";
+	}
+} */
 /* sidepanel */
 /* 
  @media  screen and (max-width: 350px) {
  @include font(500, $white, $base-font-size, $base-line-height);
 */
 .sidenav {
-  width: 40%;
+  width: 45%;
   /* Open the comment for constant opening of sidepanel */
-  /* transform: translateX(0%); */
-  background: var(--gold);
-  color: var(--white);
+  background: var(--light-black);
+  color: var(--main-color);
 }
-.sidenav .back_icon {
-  padding: 10px;
+.sidenav .sidepanel_container {
+  margin: 1rem;
 }
+.sidenav .filters_container .filter {
+  margin: 1rem 0;
+}
+.sidenav .filters_container .filter .qvobject {
+  height: 3rem;
+}
+.sidenav .filters_container .filter .qvobject#datepicker {
+  height: 2rem;
+}
+
 /* Popup Style */
 .modal {
   top: 35%;

@@ -7,3 +7,59 @@ background: linear-gradient(270deg, $blue-kpi-title-light 0%,$blue-kpi-title-dar
 @include font(500, $light-grey2, $small-font-size, 1);
 */
 
+
+.kpi_buttons {
+    padding:0.5rem 0;
+    .kpi_button_card{
+        grid-gap:0.3rem 0.3rem;
+        padding-top:0.3rem;
+        padding-bottom:0.3rem;
+
+        .kpi_button{
+           border:none;
+           border-radius: 0.5rem;
+           text-align: center;
+           background: var(--gold-light);
+           padding: 0.5rem;
+           &.active{
+            background: #cba87b;
+            /* background:  var(--gold);
+            .kpi_button_data_title{
+                color: var(--bright-text) !important;
+            }
+            .kpi_button_title{
+                color: var(--white) !important;
+            }
+            .kpi_button_data_value{
+                color: var(--white) !important;
+            }
+            .color_green{
+                color:rgb(182, 218, 182) !important;
+            }
+            .color_red{
+                color:rgb(214, 179, 179) !important;   
+            } */
+        }
+            .kpi_button_title{
+                @include font(700, var(--main-color), 1.3rem, 1);
+                padding: 0.2rem 0;
+            }
+           .kpi_button_data {
+            .col{
+                // padding:0.3rem 0;
+
+            }
+              .kpi_button_data_value{
+                direction: ltr;
+                @include font(700, var(--light-black), 1.2rem, 1);
+                &.small_value{
+                    font-size: 0.8rem;
+                }
+              }
+              .kpi_button_data_title{
+                @include font(600, var(--grey), 1.2rem, 1.4);
+              }
+           }
+        }
+    }
+}

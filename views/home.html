@@ -1,43 +1,21 @@
 <!-- controller.home -->
-<!-- Header -->
-				<!-- <div class="container_body" ng-include="'views/templates/table_invoices.html'" ng-if="object_type == 'invoices'"></div>
-				<div class="container_body" ng-include="'views/templates/table_contracts.html'" ng-if="object_type == 'contracts'"></div> -->
-				<!-- <div class="back_icon">
-        <a href="" class="close_sidenav" ng-click="closeSidepanel()">
-            <img src="img/arrow_left.svg" alt="back_icon">
-        </a>
-    </div> -->
-<header ng-include="'views/templates/header.html'"></header>
-<!-- sidepanel -->
-<div class="sidepanel sidenav" id="sidenav">
-    <div class="back_icon">
-        <a href="" class="close_sidenav" ng-click="closeSidepanel()">
-            <img src="img/arrow_left.svg" alt="back_icon">
-        </a>
-    </div>
-<!--     <div class="sidepanel_buttons">
-        <div class="buttons">
-            <button class="sidepanel_button" ng-click="changeVtarget(1,$event)">
-                Dealer
-            </button>
-            <button class="sidepanel_button active" ng-click="changeVtarget(2,$event)">
-                Budget
-            </button>
-            <button class="sidepanel_button" ng-click="changeVtarget(3,$event)">
-                Forecast
-            </button>
-        </div>
-    </div> -->
-</div>
+
 <!-- main -->
 <main>
-	<div class="container_flex"></div>
-		<!-- Top kpi -->
-		<div class="top_kpi_table" ng-include="'views/templates/kpis.html'"></div>
-		<!-- Main Container -->
-		<div class="main_container">
-			
-		</div>
-	</div>
+    <div class="active_buttons row mt-3">
+        <div class="button col s4">
+            <div class="qvobject" id="button_0"></div>
+        </div>
+        <div class="button col s4">
+            <div class="qvobject" id="button_1"></div>
+        </div>
+        <div class="button col s4">
+            <div class="qvobject" id="button_2"></div>
+        </div>
+    </div>
+    <div class="pivot_container chart">
+        <div class="qvobject" id="pivot"></div>
+    </div>
+    
 </main>
-<!-- ng-if="object_type == 'invoices'" -->
+        

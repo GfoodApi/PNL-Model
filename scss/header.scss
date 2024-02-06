@@ -6,40 +6,54 @@
                     background-size: cover;
                 }
 */
-header {
-    background-color: var(--top-background);
-        height: 54px;
-        //@include center_center;
-        display: flex;
-        justify-content: space-between;
-
-        >div {
-            display: flex;
-        }
-
-        img {
-            height: 24px;
-        }
-
+header.header{
+    background-image: url(../img/header.jpg);
+    background-size: cover;
+    height: 6rem;
+    display: block;
+    width: 100%;
+    .header_container {
+        height:100%;
+        padding: 0 1rem;
+    
         .sidepanel_icon {
-
-            width: 15%;
-            align-items: center;
-            margin-left: 15px;
-
+            justify-content: start;
+            button{
+                i{
+                    color: var(--white);
+                }
+                &:focus{
+                    background-color:transparent;
+                }
+            }
         }
 
-        .title {
-            @include center_center;
-            text-align: center;
-//@include font(600, $white, $base-font-size, $base-line-height);
+        .menu_icons  {
+            .icons_container{
+                width:80%;
+                a{
+                    margin: 0 0.5rem;
+                    i{
+                        font-size: 3rem;
+                        color: var(--white);
+                    }
+                    &.active{
+                        i{
+                            color: var(--gold-lighter);
+                        }
+                    }
+                }
+            }
+            justify-content: center;
+            color: var(--white);
+        }
         }
 
-        .icon {
-            width: 15%;
-            align-items: center;
-            justify-content: flex-end;
-            margin-right: 15px;
-        }
+        .logo  {
+            justify-content: end;
+            img{
+                height: 5.5rem;
+            }
+      
     }
-
+}

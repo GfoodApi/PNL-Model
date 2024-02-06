@@ -136,7 +136,7 @@ app.obj.angularApp
 						"perc": utility.NFormatter(reply.qHyperCube.qDataPages[0].qMatrix[0][i].qNum, 0, true),
 						"perc_float": utility.NFormatter(reply.qHyperCube.qDataPages[0].qMatrix[0][i].qNum, 1, true),
 						"perc_float_abs": utility.NFormatter(Math.abs(reply.qHyperCube.qDataPages[0].qMatrix[0][i].qNum), 1, true),
-						"numKM": utility.NFormatter(reply.qHyperCube.qDataPages[0].qMatrix[0][i].qNum, 1, false, false),
+						"numKM": utility.NFormatter(reply.qHyperCube.qDataPages[0].qMatrix[0][i].qNum,2, false, false),
 						"formatted_num": utility.NFormatter(reply.qHyperCube.qDataPages[0].qMatrix[0][i].qNum, 1, false, true)
 					});
 				}
