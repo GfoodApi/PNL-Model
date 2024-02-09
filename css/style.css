@@ -28,6 +28,9 @@
   --orange-light: #F5CCA0;
   --orange-lighter: #F8E3C5;
   --yellow-p: #FFF6E0;
+  /* chart colors */
+  --gold-light-p: #F1E2C5;
+  --gold-lighter-p: #F8F1E2;
   /* Font Size */
   --small-font-size: 12px;
   --base-font-size: 14px;
@@ -370,11 +373,11 @@ background: linear-gradient(270deg, $blue-kpi-title-light 0%,$blue-kpi-title-dar
   border: none;
   border-radius: 0.5rem;
   text-align: center;
-  background: var(--gold-light);
+  background: var(--gold-lighter-p);
   padding: 0.5rem;
 }
 .kpi_buttons .kpi_button_card .kpi_button.active {
-  background: #cba87b;
+  background: var(--gold-light-p);
   /* background:  var(--gold);
   .kpi_button_data_title{
       color: var(--bright-text) !important;
@@ -402,9 +405,14 @@ background: linear-gradient(270deg, $blue-kpi-title-light 0%,$blue-kpi-title-dar
 .kpi_buttons .kpi_button_card .kpi_button .kpi_button_data .kpi_button_data_value {
   direction: ltr;
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1;
   color: var(--light-black);
+}
+@media screen and (max-width: 375px) {
+  .kpi_buttons .kpi_button_card .kpi_button .kpi_button_data .kpi_button_data_value {
+    font-size: 1rem;
+  }
 }
 .kpi_buttons .kpi_button_card .kpi_button .kpi_button_data .kpi_button_data_value.small_value {
   font-size: 0.8rem;
@@ -447,7 +455,8 @@ background: linear-gradient(270deg, $blue-kpi-title-light 0%,$blue-kpi-title-dar
 }
 .active_buttons .button .qvobject .qv-object-action-button button {
   border-radius: 0.8rem !important;
-  background: var(--gold) !important;
+  background: var(--gold-lighter-p) !important;
+  color: var(--main-text) !important;
 }
 .active_buttons .button .qvobject .qv-object-action-button button text {
   direction: rtl;
@@ -457,15 +466,15 @@ background: linear-gradient(270deg, $blue-kpi-title-light 0%,$blue-kpi-title-dar
   font-family: var(--font-stack) !important;
 }
 .active_buttons .button .qvobject .qv-object-action-button button:hover, .active_buttons .button .qvobject .qv-object-action-button button:active, .active_buttons .button .qvobject .qv-object-action-button button:focus {
-  background: var(--gold-light) !important;
-  color: var(--main-color) !important;
+  background: var(--gold-light-p) !important;
+  color: var(--main-text) !important;
 }
 .active_buttons .button .qvobject .qv-object-action-button.qv-object-c0509e5c-bcc1-4872-b89a-1bf2ccf75803 button text span {
   font-size: 0.9rem !important;
-  max-width: 100px;
+  /* max-width: 100px;
   text-overflow: ellipsis;
   text-align: center;
-  overflow: hidden;
+  overflow: hidden; */
 }
 
 /*  Styling for Qlik Objects */
@@ -513,13 +522,13 @@ background: linear-gradient(270deg, $blue-kpi-title-light 0%,$blue-kpi-title-dar
   bottom: 9px;
 }
 .qvobject .qv-object-filterpane {
-  height: 27px;
+  height: 2.7rem;
 }
 .qvobject .qv-object-filterpane .qv-collapsed-listbox {
   background: var(--white);
   border-radius: 10px;
   border: none;
-  height: 23px;
+  height: 2.5rem;
   /* for SaaS version */
   /* .qv-state-count-bar{
   	display: none;
@@ -545,7 +554,7 @@ background: linear-gradient(270deg, $blue-kpi-title-light 0%,$blue-kpi-title-dar
   content: "expand_more";
   -webkit-font-feature-settings: "liga";
   color: var(--main-color);
-  font-size: 18px;
+  font-size: 1.5rem;
   line-height: 1.2;
   width: 15px;
   position: absolute;
@@ -573,6 +582,13 @@ background: linear-gradient(270deg, $blue-kpi-title-light 0%,$blue-kpi-title-dar
 .qvobject .qv-object-sn-pivot-table {
   direction: rtl;
 }
+.qvobject .qv-object-sn-pivot-table div {
+  direction: rtl !important;
+}
+.qvobject .qv-object-sn-pivot-table div[data-testid=measure-cell] > div {
+  justify-content: flex-start;
+  direction: ltr !important;
+}
 .qvobject .qv-object-sn-pivot-table svg[data-testid=collapse-icon], .qvobject .qv-object-sn-pivot-table svg[data-testid=expand-icon] {
   height: 1.5rem !important;
 }
@@ -587,7 +603,7 @@ background: linear-gradient(270deg, $blue-kpi-title-light 0%,$blue-kpi-title-dar
   border-bottom: 1px solid var(--main-color);
 }
 .qvobject .qv-object-sn-pivot-table div[data-testid=title-cell], .qvobject .qv-object-sn-pivot-table div[data-cell-type=P] {
-  background: var(--orange-lighter) !important;
+  background: var(--gold-lighter-p) !important;
   font-weight: 700;
   border: 1px solid var(--main-color);
 }
@@ -628,7 +644,7 @@ background: linear-gradient(270deg, $blue-kpi-title-light 0%,$blue-kpi-title-dar
 
 /* filters */
 .qv-object-filterpane {
-  height: 2.5rem;
+  height: 3rem;
   /* input value */
 }
 .qv-object-filterpane .folded-listbox > div {
@@ -641,7 +657,7 @@ background: linear-gradient(270deg, $blue-kpi-title-light 0%,$blue-kpi-title-dar
 .qv-object-filterpane .folded-listbox > div h6 {
   font-family: var(--font-stack);
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.7;
   color: var(--main-color);
   text-overflow: ellipsis;

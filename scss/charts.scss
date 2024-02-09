@@ -29,7 +29,8 @@
 			.qv-object-action-button{
 				button{
 					border-radius: 0.8rem !important;
-					background: var(--gold) !important;
+					background: var(--gold-lighter-p) !important;
+					color: var(--main-text) !important;
 					text{
 						direction: rtl;
 						font-size: 1.3rem !important;
@@ -38,18 +39,18 @@
 						}
 					}
 					&:hover,&:active, &:focus {
-						background: var(--gold-light) !important;
-						color: var(--main-color) !important;
+						background: var(--gold-light-p) !important;
+						color: var(--main-text) !important;
 					}
 				}
 				&.qv-object-c0509e5c-bcc1-4872-b89a-1bf2ccf75803{
 					button text{
 						span{
 							font-size: 0.9rem !important;
-							max-width: 100px;
+							/* max-width: 100px;
 							text-overflow: ellipsis;
 							text-align: center;
-							overflow: hidden;
+							overflow: hidden; */
 						}
 						
 					}

@@ -94,8 +94,6 @@ console.log('Basic Settings', baseUrl, config.webIntegrationId, scriptsUrl);
 			'angular',
 			//'materialize',
 			'controller.home',
-
-
 			'controller.dashboard',
 			'service.api',
 			'service.utility',

@@ -117,7 +117,7 @@ app.obj.angularApp
 					qTop: 0,
 					qLeft: 0,
 					qHeight: (limit) ? limit : 500,
-					qWidth: 11
+					qWidth: limit
 				}]
 			}, function (reply) {
 

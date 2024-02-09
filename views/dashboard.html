@@ -8,32 +8,18 @@
         <div class="kpi_button_card col s6 right_card">
             <div class="kpi_button sales_button active" ng-click="changeChart(0,$event)">
                 <div class="kpi_button_title">סה"כ הכנסות</div>
-               <!--  <div class="kpi_button_data row">
-                    <div class="col s4">
-                        <div class="kpi_button_data_title">2024</div>
-                        <div class="kpi_button_data_value">16.54M</div>
-                    </div>
-                    <div class="col s4">
-                     <div class="kpi_button_data_title">2023</div>
-                     <div class="kpi_button_data_value">14.32M</div>
-                 </div>
-                 <div class="col s4">
-                     <div class="kpi_button_data_title">% שינוי</div>
-                     <div class="kpi_button_data_value"  ng-class="(kpis[2].qNum > 0 ? 'color_green' : 'color_red')">52.55%</div>
-                 </div>
-                 </div>  -->
                 <div class="kpi_button_data row">
                    <div class="col s4">
-                       <div class="kpi_button_data_title">{{this_year}}</div>
+                       <div class="kpi_button_data_title">{{kpis[0].title}}</div>
                        <div class="kpi_button_data_value">{{kpis[0].numKM}}</div>
                    </div>
                    <div class="col s4">
-                    <div class="kpi_button_data_title">{{last_year}}</div>
+                    <div class="kpi_button_data_title">{{kpis[0].title}}</div>
                     <div class="kpi_button_data_value">{{kpis[1].numKM}}</div>
                 </div>
                 <div class="col s4">
                     <div class="kpi_button_data_title">% שינוי</div>
-                    <div class="kpi_button_data_value" ng-class="(kpis[2].qNum > 0 ? 'color_green' : 'color_red')">{{kpis[5].qText}}</div>
+                    <div class="kpi_button_data_value" ng-class="(kpis[2].qNum > 0 ? 'color_green' : 'color_red')">{{kpis[2].qText}}</div>
                 </div>
                 </div>
               </div>
@@ -44,12 +30,12 @@
                 <div class="kpi_button_title">סה"כ הוצאות</div>
                 <div class="kpi_button_data row">
                     <div class="col s4">
-                        <div class="kpi_button_data_title">{{this_year}}</div>
-                        <div class="kpi_button_data_value">{{kpis[2].numKM}}</div>
+                        <div class="kpi_button_data_title">{{kpis[3].title}}</div>
+                        <div class="kpi_button_data_value">{{kpis[3].numKM}}</div>
                     </div>
                     <div class="col s4">
-                     <div class="kpi_button_data_title">{{last_year}}</div>
-                     <div class="kpi_button_data_value">{{kpis[3].numKM}}</div>
+                     <div class="kpi_button_data_title">{{kpis[4].title}}</div>
+                     <div class="kpi_button_data_value">{{kpis[4].numKM}}</div>
                  </div>
                  <div class="col s4">
                      <div class="kpi_button_data_title">% שינוי</div>
@@ -64,16 +50,16 @@
                 <div class="kpi_button_title">סה"כ רווח</div>
                 <div class="kpi_button_data row">
                     <div class="col s4">
-                        <div class="kpi_button_data_title">{{this_year}}</div>
-                        <div class="kpi_button_data_value">{{kpis[4].numKM}}</div>
+                        <div class="kpi_button_data_title">{{kpis[6].title}}</div>
+                        <div class="kpi_button_data_value">{{kpis[6].numKM}}</div>
                     </div>
                     <div class="col s4">
-                     <div class="kpi_button_data_title">{{last_year}}</div>
+                     <div class="kpi_button_data_title">{{kpis[7].title}}</div>
                      <div class="kpi_button_data_value">{{kpis[7].numKM}}</div>
                  </div>
                  <div class="col s4">
                      <div class="kpi_button_data_title">% שינוי</div>
-                     <div class="kpi_button_data_value" ng-class="(kpis[5].qNum > 0 ? 'color_green' : 'color_red')">{{kpis[5].qText}}</div>
+                     <div class="kpi_button_data_value" ng-class="(kpis[8].qNum > 0 ? 'color_green' : 'color_red')">{{kpis[8].qText}}</div>
                  </div>
                 </div>
               </div>
@@ -84,16 +70,16 @@
                 <div class="kpi_button_title">% רווח</div>
                 <div class="kpi_button_data row">
                     <div class="col s4">
-                        <div class="kpi_button_data_title">{{this_year}}</div>
-                        <div class="kpi_button_data_value">{{kpis[5].numKM}}</div>
+                        <div class="kpi_button_data_title">{{kpis[9].title}}</div>
+                        <div class="kpi_button_data_value">{{kpis[9].perc_float}}</div>
                     </div>
                     <div class="col s4">
-                     <div class="kpi_button_data_title">{{last_year}}</div>
-                     <div class="kpi_button_data_value">{{kpis[6].numKM}}</div>
+                     <div class="kpi_button_data_title">{{kpis[10].title}}</div>
+                     <div class="kpi_button_data_value">{{kpis[10].perc_float}}</div>
                  </div>
                  <div class="col s4">
                      <div class="kpi_button_data_title">% שינוי</div>
-                     <div class="kpi_button_data_value" ng-class="(kpis[5].qNum > 0 ? 'color_green' : 'color_red')">{{kpis[5].qText}}</div>
+                     <div class="kpi_button_data_value" ng-class="(kpis[11].qNum > 0 ? 'color_green' : 'color_red')">{{kpis[11].qText}}</div>
                  </div>
                 </div>
               </div>

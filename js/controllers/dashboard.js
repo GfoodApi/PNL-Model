@@ -81,10 +81,10 @@ app.obj.angularApp.controller(
         me.measures,
         app.obj.app,
         function (data) {
-          console.log("getHyperCube", data);
+          console.log("getHyperCube",data);
           $scope.kpis = data;
         },
-        4
+        12
       );
     };
 
@@ -93,13 +93,13 @@ app.obj.angularApp.controller(
       //open charts
       let main_model;
       //default chart
-      app.obj.app.getObject("barchart", settings.objects.charts[0]).then( (model) => {
+      app.obj.app.getObject("barchart", settings.objects.charts[0]).then((model) => {
         main_model = model;
       });
 
       const kpi_buttons = document.querySelectorAll(".kpi_button");
       console.log('kpi_buttons', kpi_buttons);
-      
+
       $scope.changeChart = function (chart, $event) {
         //remove active class from links
         kpi_buttons.forEach((button) => button.classList.remove("active"));
