@@ -1,21 +1,24 @@
 <!-- controller.home -->
-
 <!-- main -->
+<!-- 
+    $scope.ytd_flag = false;
+    $scope.purchasesflag = false;
+    $scope.orderscustflag = false;
+ -->
+
 <main>
     <div class="active_buttons row mt-3">
         <div class="button col s3">
-            <div class="qvobject" id="button_0"></div>
+            <div class="qvobject" id="button_0" ng-class="(orderscustflag === true ? 'active':'')"></div>
         </div>
         <div class="button col s6">
-            <div class="qvobject" id="button_1"></div>
+            <div class="qvobject" id="button_1" ng-class="(purchasesflag === true ? 'active':'')"></div>
         </div>
         <div class="button col s3">
-            <div class="qvobject" id="button_2"></div>
+            <div class="qvobject" id="button_2" ng-class="(ytd_flag === true ? 'active':'')"></div>
         </div>
     </div>
     <div class="pivot_container chart">
         <div class="qvobject" id="pivot"></div>
     </div>
-    
 </main>
-        

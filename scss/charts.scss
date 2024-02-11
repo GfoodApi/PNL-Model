@@ -26,6 +26,10 @@
 		padding:0;
 		.qvobject{
 			height:40px;
+			&.active .qv-object-action-button button{
+				background: var(--gold-light-p) !important;
+				color: var(--main-text) !important;
+			}
 			.qv-object-action-button{
 				button{
 					border-radius: 0.8rem !important;
@@ -39,8 +43,7 @@
 						}
 					}
 					&:hover,&:active, &:focus {
-						background: var(--gold-light-p) !important;
-						color: var(--main-text) !important;
+						//background: var(--gold-light) !important;
 					}
 				}
 				&.qv-object-c0509e5c-bcc1-4872-b89a-1bf2ccf75803{

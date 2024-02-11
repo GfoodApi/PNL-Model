@@ -453,6 +453,10 @@ background: linear-gradient(270deg, $blue-kpi-title-light 0%,$blue-kpi-title-dar
 .active_buttons .button .qvobject {
   height: 40px;
 }
+.active_buttons .button .qvobject.active .qv-object-action-button button {
+  background: var(--gold-light-p) !important;
+  color: var(--main-text) !important;
+}
 .active_buttons .button .qvobject .qv-object-action-button button {
   border-radius: 0.8rem !important;
   background: var(--gold-lighter-p) !important;
@@ -464,10 +468,6 @@ background: linear-gradient(270deg, $blue-kpi-title-light 0%,$blue-kpi-title-dar
 }
 .active_buttons .button .qvobject .qv-object-action-button button text span {
   font-family: var(--font-stack) !important;
-}
-.active_buttons .button .qvobject .qv-object-action-button button:hover, .active_buttons .button .qvobject .qv-object-action-button button:active, .active_buttons .button .qvobject .qv-object-action-button button:focus {
-  background: var(--gold-light-p) !important;
-  color: var(--main-text) !important;
 }
 .active_buttons .button .qvobject .qv-object-action-button.qv-object-c0509e5c-bcc1-4872-b89a-1bf2ccf75803 button text span {
   font-size: 0.9rem !important;
@@ -702,6 +702,10 @@ background: linear-gradient(270deg, $blue-kpi-title-light 0%,$blue-kpi-title-dar
   background: var(--light-black);
   color: var(--main-color);
 }
+.sidenav .sidepanel_buttons {
+  display: flex;
+  justify-content: space-between;
+}
 .sidenav .sidepanel_container {
   margin: 1rem;
 }
@@ -713,6 +717,33 @@ background: linear-gradient(270deg, $blue-kpi-title-light 0%,$blue-kpi-title-dar
 }
 .sidenav .filters_container .filter .qvobject#datepicker {
   height: 2rem;
+}
+
+/* Selected Items */
+.selection_div {
+  margin-top: 3rem;
+}
+.selection_div .selection_items {
+  direction: rtl;
+}
+.selection_div .selection_items .selection_item {
+  margin-bottom: 0.8rem;
+}
+.selection_div .selection_items .selection_item h4 {
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  color: var(--white);
+  background: transparent;
+  padding: 1px 2px;
+  width: fit-content;
+  margin: 0;
+}
+.selection_div .selection_items .selection_item .selected {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--white);
 }
 
 /* Popup Style */

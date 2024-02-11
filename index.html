@@ -1,7 +1,6 @@
 <!doctype html>
 
 <html qva-bootstrap="false">
-
 <head>
 	<!-- <base href="/extensions/angularTemplate/" /> -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -10,8 +9,7 @@
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta name="HandheldFriendly" content="True">
 	<meta name="MobileOptimized" content="330">
-	<meta name="viewport"
-		content="width=330, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<meta name="viewport" content="width=330, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta http-equiv="cleartype" content="on">
@@ -31,7 +29,7 @@
 		data-main="js/lib/main.js"></script>
 </head>
 
-<body>
+<body ng-app="myApp">
 
 	<!-- Cookies Modal  -->
 	<div id="modal_ios" class="modal">
@@ -76,11 +74,16 @@
 
 		<div class="sidepanel sidenav" id="sidenav">
 			<div class="sidepanel_container">
-				<div class="back_icon">
+				<div class="sidepanel_buttons">
 					<button class="close_sidenav sidenav-button btn-floating pulse" id="close_sidenav">
 						<i class="material-icons">close</i>
 					</button>
+
+					<button class="sidenav-button btn-floating" id="back_button">
+						<i class="material-icons">reply</i>
+					</button>
 				</div>
+				.
 				<div class="filters_container">
 					<div class="filter">
 						<div class="qvobject" id="filter_0"></div>
@@ -103,6 +106,14 @@
 					<div class="filter datepicker">
 						<div class="qvobject" id="datepicker"></div>
 					</div>
+				</div>
+				<div class="selection_div">
+					<ul class="selection_items">
+						<li class="selection_item" ng-repeat="field in selection_data">
+							<h4>{{field.qField}}</h4>
+							<div class="selected">{{field.qSelected}}</div>
+						</li>
+					</ul>
 				</div>
 			 </div>
 		</div>

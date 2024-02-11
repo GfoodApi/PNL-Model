@@ -69,18 +69,16 @@ app.obj.angularApp.controller(
     }
 
     me.boot = function () {
+
       me.init();
 
       me.events();
 
-      //me.createKpis();
 
       // For debugging selections uncomment the line below
       app.obj.app.getObject("CurrentSelections", "CurrentSelections");
     };
 
-    me.createKpis = function () {
-    };
 
     //select default fields
      function selectFields() {
@@ -96,13 +94,13 @@ app.obj.angularApp.controller(
 
       //open filters
       for (let i = 0; i < settings.objects.filters.length - 1; i++) {
-        console.log("filter_" + i, settings.objects.filters[i]);
+        //console.log("filter_" + i, settings.objects.filters[i]);
         app.obj.app.getObject("filter_" + i, settings.objects.filters[i]);
       }
 
       //open active buttons
       for (let i = 0; i < settings.objects.buttons.length; i++) {
-        console.log("button_" + i, settings.objects.buttons[i]);
+        //console.log("button_" + i, settings.objects.buttons[i]);
         app.obj.app.getObject("button_" + i, settings.objects.buttons[i]);
       }
 
@@ -125,20 +123,51 @@ app.obj.angularApp.controller(
       //change vTarget variable
       //app.obj.app.variable.setNumValue(app_settings.variable, value);
 
-      //catch selections
-      // app.obj.app.getList('SelectionObject', async function (reply) {
-      // 	openContainerTable($scope.objectId);
-      // });
+      //change data table after selection
+			app.obj.app.getList('SelectionObject', function (reply) {
 
+        //set variables value
+        $scope.ytd_flag = false;
+        $scope.purchasesflag = false;
+        $scope.orderscustflag = false;
+
+				//get selected items
+				//console.log('SelectionObject', reply.qSelectionObject.qSelections);
+				//const selections =  reply.qSelectionObject.qSelections;
+				$rootScope.selection_data = reply.qSelectionObject.qSelections.map( element => {
+
+          //get selected fields for buttons flags
+          if(element.qField === 'YTD'){
+            $scope.ytd_flag = true;
+          } else if(element.qField === 'PurchasesFlag'){
+            $scope.purchasesflag = true;
+          } else if(element.qField === 'OrdersCustFlag'){
+            $scope.orderscustflag = true;
+          }
+
+					return {
+						qField: element.qField,
+					  qSelected: element.qSelected
+					}
+				})
+
+				console.log('selection_data',$rootScope.selection_data);
+			});
+
+      //Back
+      document.querySelector("#back_button").addEventListener("click", function () {
+        //console.log("back");
+        app.obj.app.back();
+      }); 
 
       //app.obj.app.clearAll();
       document.querySelector(".logo a").addEventListener("click", function () {
-        console.log("logo");
         app.obj.app.clearAll();
         //select fields
         selectFields();
-
       });
+
+
     };
 
     me.boot();
