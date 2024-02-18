@@ -3,54 +3,80 @@
  @media  screen and (max-width: 350px) {
  @include font(500, $white, $base-font-size, $base-line-height);
 */
-.sidenav{
-    width:45%;
+.sidenav {
+    width: 45%;
     /* Open the comment for constant opening of sidepanel */
     // transform: translateX(0%);
     background: var(--light-black);
-    color:var(--main-color);
+    color: var(--main-color);
 
-    .sidepanel_buttons{
+    .sidepanel_buttons {
         display: flex;
         justify-content: space-between;
-        #back_button{
-            
-        }
-    }
-   
-    .sidepanel_container{
-        margin:1rem;
-    }
-    .filters_container{
-        .filter{
-            margin: 1rem 0;
-            .qvobject{
-                height:3rem;
-                &#datepicker{
-                    height:2rem;
-                }
-            }
-        }
-    }
-} //.sidepanel
 
-    /* Selected Items */
-    .selection_div{
-        margin-top: 3rem;
-        .selection_items{
-            direction: rtl;
-            .selection_item{
-                margin-bottom:0.8rem;
-                h4{
-                    @include font(700, var(--white), 1.2rem, 1.2);
-                    background: transparent;
-                    padding: 1px 2px;
-                    width: fit-content;
-                    margin:0;
-                }
-                .selected{
-                    @include font(500,  var(--white), 1rem, 1);
+        #back_button {}
+    }
+
+    .sidepanel_container {
+        margin: 1rem;
+    }
+
+    .filters_container {
+        .filter {
+            margin: 1rem 0;
+
+            .qvobject {
+                height: 3rem;
+
+                &#datepicker {
+                    height: 2rem;
                 }
             }
         }
     }
+}
+
+//.sidepanel
+
+/* Selected Items */
+.selection_div {
+    margin-top: 3rem;
+
+    .selection_items {
+        direction: rtl;
+
+        .selection_item {
+            margin-bottom: 0.8rem;
+
+            h4 {
+                @include font(700, var(--white), 1.2rem, 1.2);
+                background: transparent;
+                padding: 1px 2px;
+                width: fit-content;
+                margin: 0;
+                width: 100%;
+            }
+
+            .clear_button {
+                font-weight: 700;
+                color: var(--white);
+                background: transparent;
+                border: none;
+                float: left;
+                position: relative;
+                top: 3px;
+                &:active, &:hover, &:focus {
+                    color: var(--gold-light);
+                    transition: 0.5s ease;
+                }
+                i {
+                    font-size: 1.8rem
+                }
+            }
+
+            .selected {
+                @include font(500, var(--white), 1rem, 1);
+            }
+        }
+    }
+}

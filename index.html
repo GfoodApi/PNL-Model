@@ -110,7 +110,7 @@
 				<div class="selection_div">
 					<ul class="selection_items">
 						<li class="selection_item" ng-repeat="field in selection_data">
-							<h4>{{field.qField}}</h4>
+							<h4>{{field.qField}} <button class="clear_button" ng-click="clearField(field.qField)"><i class="material-icons">close</i></button></h4>
 							<div class="selected">{{field.qSelected}}</div>
 						</li>
 					</ul>

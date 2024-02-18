@@ -738,6 +738,23 @@ background: linear-gradient(270deg, $blue-kpi-title-light 0%,$blue-kpi-title-dar
   padding: 1px 2px;
   width: fit-content;
   margin: 0;
+  width: 100%;
+}
+.selection_div .selection_items .selection_item .clear_button {
+  font-weight: 700;
+  color: var(--white);
+  background: transparent;
+  border: none;
+  float: left;
+  position: relative;
+  top: 3px;
+}
+.selection_div .selection_items .selection_item .clear_button:active, .selection_div .selection_items .selection_item .clear_button:hover, .selection_div .selection_items .selection_item .clear_button:focus {
+  color: var(--gold-light);
+  transition: 0.5s ease;
+}
+.selection_div .selection_items .selection_item .clear_button i {
+  font-size: 1.8rem;
 }
 .selection_div .selection_items .selection_item .selected {
   font-weight: 500;

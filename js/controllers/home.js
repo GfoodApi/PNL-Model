@@ -154,6 +154,8 @@ app.obj.angularApp.controller(
 				console.log('selection_data',$rootScope.selection_data);
 			});
 
+
+
       //Back
       document.querySelector("#back_button").addEventListener("click", function () {
         //console.log("back");
@@ -166,6 +168,12 @@ app.obj.angularApp.controller(
         //select fields
         selectFields();
       });
+
+      //clear cpecific field
+      $rootScope.clearField = function (field) {
+        console.log('clearField', field);
+        app.obj.app.field(field).clear();
+      };
 
 
     };
